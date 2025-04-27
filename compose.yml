@@ -60,7 +60,7 @@ services:
     image: ghcr.io/anassahel/blog.trustin.tech:latest
     restart: always
     ports:
-      - "127.0.0.1:4321:4321"
+      - "127.0.0.1:8080:8080"
     labels:
       - traefik.enable=true
       - traefik.http.routers.blog.rule=Host(`blog.${DOMAIN_NAME}`)
