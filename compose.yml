@@ -61,6 +61,11 @@ services:
     restart: always
     ports:
       - "127.0.0.1:4321:4321"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.blog.rule=Host(`blog.${DOMAIN_NAME}`)
+      - traefik.http.routers.blog.tls=true
+      - traefik.http.routers.blog.entrypoints=web,websecure
 
 volumes:
   traefik_data:
